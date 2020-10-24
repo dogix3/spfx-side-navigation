@@ -114,11 +114,11 @@ export default class SideNavNode extends React.Component<
     }
   }
 
-  private nodeClick(e: React.MouseEvent<HTMLDivElement>): void {
+  private nodeClick(e: any): void {
     if (!this.props.siteNavItem) {
       return;
     }
-    if (this.props.siteNavItem.url) {
+    if ((e.target.attributes.role == undefined)) {
       /* if has a url navigate to that address */
       if (this.props.siteNavItem.openInNewWindow) {
         window.open(this.props.siteNavItem.url, "_blank");
@@ -127,7 +127,17 @@ export default class SideNavNode extends React.Component<
       }
       return;
     }
-    if (!this.props.siteNavItem.url) {
+    if (!(e.target.attributes.role.value == "presentation")) {
+      /* if has a url navigate to that address */
+      if (this.props.siteNavItem.openInNewWindow) {
+        window.open(this.props.siteNavItem.url, "_blank");
+      } else {
+        window.location.href = this.props.siteNavItem.url;
+      }
+      return;
+    }
+
+    if (e.target.attributes.role.value == "presentation") {
       /* if no url then change the state */
 
       if (this.props.navIsOpened) {

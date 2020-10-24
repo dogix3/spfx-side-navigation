@@ -3,11 +3,13 @@ $panelWidthOpened: 260px;
 
 $white: #fff;
 $orange: #e67e22;
+$textColor: #7C858C;
 
-$sideNavBarBgColor: #2c3e50;
+$iconHoverColor: #3C8DAA;
+$sideNavBarBgColor: #502F5D;
 $navNodeTextIconColor: $white;
 $navNodeTextIconHoverColor: $white;
-$navNodeTextIconHoverBgColor: #e74c3c;
+$navNodeTextIconHoverBgColor: #3D2E55;
 
 /* break points borrowed from Office UI Fabric */
 $ms-screen-min-sm: 320px !default;
@@ -36,7 +38,7 @@ $ms-screen-max-md: ($ms-screen-min-lg - 1);
 }
 
 @mixin SiteNavNode {
-  color: $navNodeTextIconColor;
+  color: $textColor;
   font-weight: bold;
   font-size: 16px;
 }
@@ -65,15 +67,18 @@ $ms-screen-max-md: ($ms-screen-min-lg - 1);
     .icon-node {
       background-color: $navNodeTextIconHoverBgColor;
       .icon svg {
-        fill: $navNodeTextIconHoverColor;
+        fill: $iconHoverColor;
       }
       .title,
       i {
-        color: $navNodeTextIconHoverColor;
+        color: $white;
       }
       button {
         background-color: transparent;
       }
+    }
+    .SVGColorHover{
+      stroke: $iconHoverColor;
     }
   }
   .icon-node {
@@ -98,7 +103,7 @@ $ms-screen-max-md: ($ms-screen-min-lg - 1);
         max-width: $panelWidth;
         width: 100%;
         height: auto;
-        fill: $navNodeTextIconColor;
+        fill: $textColor;
       }
     }
     button {
@@ -132,6 +137,9 @@ $ms-screen-max-md: ($ms-screen-min-lg - 1);
         .title-node {
           color: $navNodeTextIconHoverColor;
         }
+        .SVGColorHover{
+          stroke: $iconHoverColor;
+        }
       }
     }
   }
@@ -145,13 +153,11 @@ $ms-screen-max-md: ($ms-screen-min-lg - 1);
   z-index: 3;
   background-color: $sideNavBarBgColor;
   margin-top: 50px;
-  > div:first-child {
-    background-color: $white;
-  }
 
   .site-menu-icon {
     width: $panelWidth;
-    height: $panelWidth;
+    // height: $panelWidth;
+    height: 70px;
     color: $navNodeTextIconColor;
     background-color: $sideNavBarBgColor;
     margin: 0 auto;
@@ -185,7 +191,9 @@ $ms-screen-max-md: ($ms-screen-min-lg - 1);
     &.opened {
       width: $panelWidthOpened;
       .menu-toggle {
-        margin-left: $panelWidthOpened - $panelWidth;
+        // margin-left: $panelWidthOpened - $panelWidth;
+        width: 20%;
+        float: right;
       }
       .site-nav-node .dynamic-children {
         display: block;
@@ -197,4 +205,57 @@ $ms-screen-max-md: ($ms-screen-min-lg - 1);
       }
     }
   }
+}
+
+// Estilos personalizados
+.LogoContainer{
+  width: 80%;
+  margin: 0;
+  .MenuMainLogo{
+    width: 185px;
+    padding: 10px;
+  }
+}
+
+.ShowIcon{
+  display: inline-block;
+}
+
+.HideIcon{
+  display: none;
+}
+.MainContainUserData{
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-bottom: 30px;
+  display: flex;
+  .userProfilePic{
+    width: 50px;
+    display: inline-block;
+    margin-top: 3px;
+    img{
+      width: 100%;
+      border-radius: 60px;
+    }
+  }
+  .userProfileInfo{
+    display: inline-block;
+    margin-left: 15px;
+    color: #fff;
+    .birthDate{
+      color: $textColor;
+    }
+    .saludo,.birthDate{
+      font-size: 12px;
+    }
+  }
+}
+
+.sideNavElemetns{
+  max-width: 50px;
+  color: rgb(255, 255, 255);
+}
+
+.SVGColorHover:hover{
+  stroke: $iconHoverColor;
 }

@@ -45,8 +45,7 @@ export default class SpfxSideNavigationApplicationCustomizer
 
         if (this.topPlaceholder.domElement) {
           const element: React.ReactElement<{}> = React.createElement(
-            SideNav,
-            {}
+            SideNav
           );
           ReactDom.render(element, this.topPlaceholder.domElement);
         }
