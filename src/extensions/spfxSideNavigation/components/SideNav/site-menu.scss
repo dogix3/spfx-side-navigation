@@ -1,5 +1,5 @@
 $panelWidth: 50px;
-$panelWidthOpened: 260px;
+$panelWidthOpened: 190px;
 
 $white: #fff;
 $orange: #e67e22;
@@ -39,8 +39,9 @@ $ms-screen-max-md: ($ms-screen-min-lg - 1);
 
 @mixin SiteNavNode {
   color: $textColor;
-  font-weight: bold;
+  // font-weight: bold;
   font-size: 16px;
+  // font-family: "Source Sans Pro" !important;
 }
 
 .site-nav-node {
@@ -50,7 +51,7 @@ $ms-screen-max-md: ($ms-screen-min-lg - 1);
   &.dropdown {
     > div:not(.dynamic-children) {
       .title {
-        width: 170px;
+        // width: 170px;
         margin-right: 30px;
       }
       button {
@@ -152,20 +153,20 @@ $ms-screen-max-md: ($ms-screen-min-lg - 1);
   height: 100vh;
   z-index: 3;
   background-color: $sideNavBarBgColor;
-  margin-top: 50px;
+  margin-top: 48px;
 
   .site-menu-icon {
-    width: $panelWidth;
+    // width: $panelWidth;
     // height: $panelWidth;
-    height: 70px;
+    height: 53px;
     color: $navNodeTextIconColor;
     background-color: $sideNavBarBgColor;
     margin: 0 auto;
-    &:hover,
-    &.active {
-      background-color: $navNodeTextIconHoverBgColor;
-      color: $navNodeTextIconHoverColor;
-    }
+    // &:hover,
+    // &.active {
+    //   background-color: $navNodeTextIconHoverBgColor;
+    //   color: $navNodeTextIconHoverColor;
+    // }
   }
 
   .site-menu {
@@ -186,6 +187,9 @@ $ms-screen-max-md: ($ms-screen-min-lg - 1);
         top: 0;
         left: $panelWidth;
         width: $panelWidthOpened;
+      }
+      .site-menu-icon{
+        margin-left: 9px;
       }
     }
     &.opened {
@@ -212,7 +216,7 @@ $ms-screen-max-md: ($ms-screen-min-lg - 1);
   width: 80%;
   margin: 0;
   .MenuMainLogo{
-    width: 185px;
+    width: 140px;
     padding: 10px;
   }
 }
@@ -227,7 +231,7 @@ $ms-screen-max-md: ($ms-screen-min-lg - 1);
 .MainContainUserData{
   margin-top: 15px;
   margin-left: 15px;
-  margin-bottom: 30px;
+  // margin-bottom: 30px;
   display: flex;
   .userProfilePic{
     width: 50px;

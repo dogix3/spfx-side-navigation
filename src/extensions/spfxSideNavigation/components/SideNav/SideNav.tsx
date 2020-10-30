@@ -126,10 +126,16 @@ export default class SideNav extends React.Component<
 
                     <hr />
                     <div className="site-nav-node">
-                        <div role="menu">
+                        <div role="menu" onClick={(e) => this.nodeClick("https://myaccount.microsoft.com/?ref=MeControl")}>
                             <div className="icon-node ms-fadeIn400">
                                 <div className="icon ms-fadeIn400 sideNavElemetns">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><g id="_26.PEOPLE" data-name="26.PEOPLE"><path d="M16,14.51A14.07,14.07,0,0,0,2,28.56V29a1,1,0,0,0,1,1h26.1a1,1,0,0,0,1-1v-.46A14.07,14.07,0,0,0,16,14.51ZM4,28a12.05,12.05,0,0,1,24.08,0Z"></path><path d="M16,13.61a5.75,5.75,0,0,0,5.66-5.82A5.75,5.75,0,0,0,16,2a5.75,5.75,0,0,0-5.66,5.82A5.75,5.75,0,0,0,16,13.61ZM16,4a3.75,3.75,0,0,1,3.66,3.82A3.75,3.75,0,0,1,16,11.61a3.75,3.75,0,0,1-3.66-3.82A3.75,3.75,0,0,1,16,4Z"></path></g></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <g id="baseline-perm_identity-24px">
+                                            <path id="Trazado_381" data-name="Trazado 381" d="M12,5.9A2.1,2.1,0,1,1,9.9,8,2.1,2.1,0,0,1,12,5.9m0,9c2.97,0,6.1,1.46,6.1,2.1v1.1H5.9V17c0-.64,3.13-2.1,6.1-2.1M12,4a4,4,0,1,0,4,4A4,4,0,0,0,12,4Zm0,9c-2.67,0-8,1.34-8,4v3H20V17C20,14.34,14.67,13,12,13Z" fill="inherit" />
+                                            <path id="Trazado_382" data-name="Trazado 382" d="M0,0H24V24H0Z" fill="none" />
+                                        </g>
+                                    </svg>
+
                                 </div>
                                 {
                                     this.state.isOpened ? <div>
@@ -139,7 +145,7 @@ export default class SideNav extends React.Component<
                             </div>
                         </div>
                     </div>
-                    <div className="site-nav-node">
+                    {/* <div className="site-nav-node">
                         <div role="menu">
                             <div className="icon-node ms-fadeIn400">
                                 <div className="icon ms-fadeIn400 sideNavElemetns">
@@ -154,7 +160,7 @@ export default class SideNav extends React.Component<
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                     {/*  */}
                 </div>
             </div>
@@ -234,6 +240,9 @@ export default class SideNav extends React.Component<
             console.log("Error: " + error);
 
         });
+    }
 
+    private nodeClick(pURL: any): void {
+        window.location.href = pURL
     }
 }
