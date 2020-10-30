@@ -1,11 +1,12 @@
 import ISideNavProvider from "./ISideNavProvider";
 import ISideNavItem from "../model/ISideNavItem";
 import ISPSideNavItem from "../model/ISPSideNavItem";
-import { sp } from "@pnp/sp";
+import { sp, Web } from "@pnp/sp";
 
 export default class SideNavProvider implements ISideNavProvider {
   public getSideNav(): Promise<ISideNavItem[]> {
-    return sp.web.lists
+    let web = new Web("https://ulacitcr.sharepoint.com/sites/HomePlayRoom");
+    return web.lists
       .getByTitle("Side Nav List")
       .items.select(
         "Title",
